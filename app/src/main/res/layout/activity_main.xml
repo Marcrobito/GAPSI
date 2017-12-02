@@ -24,14 +24,15 @@
             android:layout_height="match_parent"
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
-            android:paddingTop="10dp"
+            android:paddingTop="5dp"
             android:layout_weight="1"
             android:drawableLeft="@drawable/search_icon"
             android:ems="10"
             android:inputType="none"
             android:background="@drawable/searchbox"
             android:height="40dp"
-            android:hint="Name"
+            android:textSize="14dp"
+            android:hint="Buscar"
             />
     </LinearLayout>
 

@@ -48,33 +48,12 @@ class MainActivity : AppCompatActivity() {
 
 
         if(requestCode == 0 && resultCode == Activity.RESULT_OK){
-            var jsonArray = data!!.getStringExtra("json_result")
-            try {
-                val array = JSONArray(jsonArray)
-                Log.d("we did it", jsonArray.toString())
+            var global = (this@MainActivity.applicationContext as GlobalApp)
+            mAdapter = ProductsAdapter(this@MainActivity, global.getProducList()!!)
+            listProducts.adapter = mAdapter
+            emptySearch.visibility = View.GONE
 
 
-
-                if (array.length() > 20){
-                    var arrayF = JSONArray()
-                    for (i in 0 until array.length()){
-                        arrayF.put(array.getJSONObject(i))
-
-                    }
-
-                    mAdapter = ProductsAdapter(this@MainActivity, arrayF)
-                    listProducts.adapter = mAdapter
-                }else{
-
-                    mAdapter = ProductsAdapter(this@MainActivity, array)
-                    listProducts.adapter = mAdapter
-                }
-
-                emptySearch.visibility = View.GONE
-            }catch (e:JSONException){
-
-            }
-            //adapter
         }
     }
 }
