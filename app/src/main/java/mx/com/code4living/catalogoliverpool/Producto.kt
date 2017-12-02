@@ -7,7 +7,7 @@ class Producto{
     private lateinit var displayName:String
     private lateinit var thumbnailImage:String
     private lateinit var largeImage:String
-    private lateinit var brand:String
+    private var brand:String = ""
     private lateinit var sortPrice:String
     private lateinit var repositoryId:String
 

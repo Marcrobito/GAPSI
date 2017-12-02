@@ -20,7 +20,9 @@ class GlobalApp:Application(){
             product.setDisplayName(jObject.getJSONArray("product.displayName").getString(0))
             product.setThumbnailImage(jObject.getJSONArray("sku.thumbnailImage").getString(0))
             product.setLargeImage(jObject.getJSONArray("sku.largeImage").getString(0))
-            product.setBrand(jObject.getJSONArray("product.brand").getString(0))
+            if(jObject.has("product.brand"))
+                product.setBrand(jObject.getJSONArray("product.brand").getString(0))
+            
             product.setSortPrice(jObject.getJSONArray("sortPrice").getString(0))
             product.setRepositoryId(jObject.getJSONArray("sku.repositoryId").getString(0))
             productList.add(product)

@@ -1,6 +1,7 @@
 package mx.com.code4living.catalogoliverpool
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -37,6 +38,8 @@ class ProductsAdapter(context: Context, data:MutableList<Producto>): BaseAdapter
 
         Picasso.with(this.context).load(data.getJSONObject(position).getJSONObject("attributes").getJSONArray("sku.thumbnailImage").getString(0))
                 .into(image)*/
+
+        //Log.d("a ver ", data[position].getSortPrice())
 
         var price =  data[position].getSortPrice().toFloat()
 
